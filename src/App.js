@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
-import TableOfContents from './components/TableOfContents';
 import AboutMe from './components/AboutMe';
 import ProjectSection from './components/ProjectSection';
 import './App.css';
@@ -173,7 +172,6 @@ function App() {
         <Hero />
       </div>
       <div className="content-wrapper">
-        <TableOfContents />
         <AboutMe />
         
         {/* Industry Section */}
