@@ -3,6 +3,7 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
 import ProjectSection from './components/ProjectSection';
+import IndustryCarousel from './components/IndustryCarousel';
 import './App.css';
 
 function App() {
@@ -195,11 +196,14 @@ function App() {
               <div className="industry-card">
                 <div className="card-icon">📊</div>
                 <h4>Inbound/Outbound Reporting Enhancement</h4>
-                <p>Engineered an automated data reconciliation system using PySpark on AWS Athena to validate data integrity across a pipeline. Evolved from interactive Athena notebooks to a production solution with modular S3-based scripts, 
-                enabling non-technical stakeholders to configure parameters (dates, environments) without code changes.</p>
-                <p>The system validates millions of records across three stages: XML declaration ingestion, Parquet transformation, and Successful processing responses. Implemented performance optimizations that reduced runtime by 75%, with cost optimised Spark compute. 
-                Deployed via Jenkins CI/CD with multi-environment support (test/UAT/prod).</p>
-                <p>Successfully deployed to production, processing hundreds of thousands of daily records and generating partitioned CSV reports that track pipeline success rates and provide detailed error diagnostics for troubleshooting data quality issues, run weekly by stakeholders.</p>
+                <IndustryCarousel
+                  slides={[
+                    <p key="1">Engineered an automated data reconciliation system using PySpark on AWS Athena to validate data integrity across a pipeline. Evolved from interactive Athena notebooks to a production solution with modular S3-based scripts, enabling non-technical stakeholders to configure parameters (dates, environments) without code changes.</p>,
+                    <p key="2">The system validates millions of records across three stages: XML declaration ingestion, Parquet transformation, and successful processing responses. Implemented performance optimizations that reduced runtime by 75%, with cost optimised Spark compute. Deployed via Jenkins CI/CD with multi-environment support (test/UAT/prod).</p>,
+                    <p key="3">Successfully deployed to production, processing hundreds of thousands of daily records and generating partitioned CSV reports that track pipeline success rates and provide detailed error diagnostics for troubleshooting data quality issues, run weekly by stakeholders.</p>
+                    
+                  ]}
+                />
                 <div className="tech-tags-inline">
                   <span>PySpark</span>
                   <span>AWS S3</span>
@@ -211,14 +215,14 @@ function App() {
 
               <div className="industry-card">
                 <div className="card-icon">🔧</div>
-                <h4>OpenSearch Index Repair System</h4>
-                <p>Architected and developed a production-scale Apache Spark application on AWS EMR Serverless to automatically detect, repair, and regenerate corrupted OpenSearch indexes. 
-                Initially tested using Jupyter notebooks attached to EMR clusters for interactive development and exploration, then transformed into a headless production solution orchestrated via AWS Step Functions. </p>
-                <p>The solution processes millions of records across multiple indexes by comparing Parquet data versions with live index versions in OpenSearch, performing complex multi-table joins across 10+ related datasets,
-                and implementing intelligent data sharding strategies to handle large-scale rebuilds without impacting production systems.
-                Deployed using IaC (CloudFormation) with blue/green deployment patterns in secure VPC environments.
-                </p>
-                <p> After initial testing and iteration, the solution was deployed, successfully repairing over 1 million outdated records across multiple production indexes.</p>
+                <h4>OpenSearch Index Repair </h4>
+                <IndustryCarousel
+                  slides={[
+                    <p key="1">Architected and developed a production-scale Apache Spark application on AWS EMR Serverless to automatically detect, repair, and regenerate corrupted OpenSearch indexes. Initially tested using Jupyter notebooks attached to EMR clusters for interactive development and exploration, then transformed into a headless production solution orchestrated via AWS Step Functions.</p>,
+                    <p key="2">The solution processes millions of records across multiple indexes by comparing Parquet data versions with live index versions in OpenSearch, performing complex multi-table joins across 10+ related datasets, and creating large JSON transformations to handle large-scale rebuilds without impacting production systems. Deployed with blue/green deployment patterns in secure VPC environments.</p>,
+                    <p key="3">After initial testing and iteration, the solution was deployed, successfully repairing over 1 million outdated records across multiple production indexes.</p>
+                  ]}
+                />
                 <div className="tech-tags-inline">
                   <span>Apache Spark</span>
                   <span>OpenSearch</span>
@@ -230,10 +234,13 @@ function App() {
               <div className="industry-card">
                 <div className="card-icon">🔍</div>
                 <h4>Conflict Reporting API</h4>
-                <p>Developed a serverless conflict reporting API for a client to automate the identification of rights disputes across multiple territories and data providers, with Salesforce-integrated user authentication and authorization.</p>
-                <p>The solution was built using AWS Lambda to process client API requests with configurable parameters (territories, date ranges, conflicting parties).
-                Utilised Athena SQL queries to process large Parquet datasets in S3. Implemented asynchronous processing with SFTP delivery and complex territory-based filtering logic.</p>
-                <p>Delivered a scalable system that processes millions of records and reduces conflict report generation from days to hours, enabling faster resolution of rights disputes for enterprise clients.</p>
+                <IndustryCarousel
+                  slides={[
+                    <p key="1">Developed a serverless conflict reporting API for a client to automate the identification of rights disputes across multiple territories and data providers, with Salesforce-integrated user authentication and authorization.</p>,
+                    <p key="2">The solution was built using AWS Lambda to process client API requests with configurable parameters (territories, date ranges, conflicting parties). Utilised Athena SQL queries to process large Parquet datasets in S3. Implemented asynchronous processing with SFTP delivery and complex territory-based filtering logic.</p>,
+                    <p key="3">Delivered a scalable system that processes millions of records and reduces conflict report generation from days to hours, enabling faster resolution of rights disputes for enterprise clients.</p>
+                  ]}
+                />
                 <div className="tech-tags-inline">
                   <span>AWS Lambda</span>
                   <span>AWS Athena</span>
