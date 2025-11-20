@@ -1,0 +1,133 @@
+.ipad-mockup {
+  width: 100%;
+  max-width: 550px;
+  max-height: 600px;
+  margin: 0 auto;
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ipad-frame {
+  position: relative;
+  height: 600px;
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  border-radius: 35px;
+  padding: 16px;
+  box-shadow: 
+    0 0 0 8px #2d2d2d,
+    0 0 0 10px #1a1a1a,
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    inset 0 0 6px rgba(255, 255, 255, 0.1);
+  overflow: visible;
+}
+
+.ipad-camera {
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #1e3a8a 30%, #0a0a0a 70%);
+  border-radius: 50%;
+  z-index: 11;
+  box-shadow: 
+    0 0 2px rgba(0, 0, 0, 0.8),
+    inset 0 -1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.ipad-screen {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ipad-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ipad-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .ipad-mockup {
+    max-width: 450px;
+    max-height: 500px;
+  }
+  
+  .ipad-frame {
+    height: 500px;
+  }
+  
+  .ipad-placeholder {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ipad-mockup {
+    max-width: 100%;
+    max-height: 400px;
+  }
+  
+  .ipad-frame {
+    height: 400px;
+    padding: 12px;
+  }
+  
+  .ipad-camera {
+    width: 10px;
+    height: 10px;
+    top: 22px;
+  }
+  
+  .ipad-placeholder {
+    font-size: 1.25rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ipad-mockup {
+    max-height: 300px;
+  }
+  
+  .ipad-frame {
+    height: 300px;
+    padding: 10px;
+  }
+  
+  .ipad-camera {
+    width: 8px;
+    height: 8px;
+    top: 20px;
+  }
+  
+  .ipad-placeholder {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+

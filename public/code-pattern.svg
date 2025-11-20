@@ -1,0 +1,16 @@
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Code brackets </> scattered pattern -->
+  <text x="20" y="40" font-family="monospace" font-size="28" fill="white" opacity="1">&lt;/&gt;</text>
+  <text x="180" y="80" font-family="monospace" font-size="24" fill="white" opacity="0.9">{}</text>
+  <text x="90" y="120" font-family="monospace" font-size="22" fill="white" opacity="0.85">[]</text>
+  <text x="220" y="160" font-family="monospace" font-size="26" fill="white" opacity="0.95">&lt;&gt;</text>
+  <text x="40" y="200" font-family="monospace" font-size="20" fill="white" opacity="0.8">()</text>
+  <text x="150" y="240" font-family="monospace" font-size="24" fill="white" opacity="0.9">&lt;/&gt;</text>
+  <text x="70" y="60" font-family="monospace" font-size="18" fill="white" opacity="0.75">=&gt;</text>
+  <text x="240" y="200" font-family="monospace" font-size="20" fill="white" opacity="0.8">01</text>
+  <text x="10" y="140" font-family="monospace" font-size="22" fill="white" opacity="0.85">#</text>
+  <text x="190" y="40" font-family="monospace" font-size="18" fill="white" opacity="0.7">*</text>
+  <text x="120" y="180" font-family="monospace" font-size="20" fill="white" opacity="0.8">//</text>
+  <text x="260" y="120" font-family="monospace" font-size="22" fill="white" opacity="0.85">&amp;&amp;</text>
+</svg>
+

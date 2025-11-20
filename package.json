@@ -2,16 +2,26 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://widali.github.io/portfolio",
   "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.4.0",
+    "gsap": "^3.13.0",
+    "ogl": "^1.0.11",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-scripts": "5.0.1"
+    "react-masonry-css": "^1.0.16",
+    "react-router-dom": "^7.9.6",
+    "react-scripts": "5.0.1",
+    "three": "^0.181.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

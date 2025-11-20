@@ -1,0 +1,144 @@
+.pill-nav-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.pill-nav {
+  --nav-h: 48px;
+  --pill-pad-x: 24px;
+  --pill-gap: 4px;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.pill-nav-items {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--nav-h);
+  background: var(--base, #0A1929);
+  border-radius: 9999px;
+  border: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+.pill-list {
+  list-style: none;
+  display: flex;
+  align-items: stretch;
+  gap: var(--pill-gap);
+  margin: 0;
+  padding: 4px;
+  height: 100%;
+}
+
+.pill-list > li {
+  display: flex;
+  height: 100%;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 var(--pill-pad-x);
+  background: var(--pill-bg, rgba(30, 40, 60, 0.8));
+  color: var(--pill-text, #E2E8F0);
+  text-decoration: none;
+  border: none;
+  border-radius: 9999px;
+  box-sizing: border-box;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 0;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.pill .hover-circle {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  border-radius: 50%;
+  background: var(--base, #60A5FA);
+  z-index: 1;
+  display: block;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.pill .label-stack {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  z-index: 2;
+}
+
+.pill .pill-label {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  line-height: 1;
+  will-change: transform;
+}
+
+.pill .pill-label-hover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--hover-text, #FFFFFF);
+  z-index: 3;
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.pill.is-active {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60A5FA;
+}
+
+.pill.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: #60A5FA;
+  border-radius: 50px;
+  z-index: 4;
+  box-shadow: 0 0 12px rgba(96, 165, 250, 0.6);
+}
+
+@media (max-width: 768px) {
+  .pill-nav {
+    --nav-h: 44px;
+    --pill-pad-x: 18px;
+  }
+
+  .pill {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pill-nav {
+    --nav-h: 40px;
+    --pill-pad-x: 14px;
+  }
+
+  .pill {
+    font-size: 13px;
+  }
+}
+

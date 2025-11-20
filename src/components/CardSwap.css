@@ -1,0 +1,217 @@
+/* Official react-bits CardSwap CSS - customized for portfolio */
+.card-swap-container {
+  position: relative;
+  perspective: 900px;
+  overflow: visible;
+  margin-top: calc(2rem + 60px);
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(10, 20, 35, 0.98), rgba(15, 25, 40, 0.98));
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(96, 165, 250, 0.2) inset;
+  border: 1px solid rgba(96, 165, 250, 0.15);
+  
+  overflow: hidden;
+  cursor: pointer;
+  
+  transform-style: preserve-3d;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  
+  text-align: left;
+  direction: ltr;
+}
+
+/* Browser bar background */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(180deg, rgba(25, 35, 55, 0.98) 0%, rgba(15, 25, 45, 0.98) 100%);
+  border-bottom: 1px solid rgba(96, 165, 250, 0.25);
+  z-index: 9;
+}
+
+/* Traffic light buttons */
+.card::after {
+  content: attr(data-title);
+  position: absolute;
+  top: 0;
+  left: 14px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #E2E8F0;
+  letter-spacing: -0.01em;
+  padding-left: 60px;
+  background-image: 
+    radial-gradient(circle, #FF5F57 5.5px, transparent 5.5px),
+    radial-gradient(circle, #FEBC2E 5.5px, transparent 5.5px),
+    radial-gradient(circle, #28C840 5.5px, transparent 5.5px);
+  background-size: 11px 11px;
+  background-position: 0px 15px, 20px 15px, 40px 15px;
+  background-repeat: no-repeat;
+}
+
+.card:hover {
+  box-shadow: 
+    0 15px 50px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(96, 165, 250, 0.35) inset,
+    0 0 80px rgba(96, 165, 250, 0.2);
+  border-color: rgba(96, 165, 250, 0.3);
+}
+
+/* Card content wrapper to account for browser chrome */
+.card > * {
+  position: relative;
+  z-index: 5;
+  padding: 1rem 1.5rem;
+  padding-top: 52px; /* Account for browser chrome + tab bar */
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: left;
+  direction: ltr;
+}
+
+/* Custom scrollbar */
+.card > *::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card > *::-webkit-scrollbar-track {
+  background: rgba(96, 165, 250, 0.05);
+  border-radius: 3px;
+}
+
+.card > *::-webkit-scrollbar-thumb {
+  background: rgba(96, 165, 250, 0.3);
+  border-radius: 3px;
+}
+
+.card > *::-webkit-scrollbar-thumb:hover {
+  background: rgba(96, 165, 250, 0.5);
+}
+
+.card h3 {
+  color: #60A5FA;
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  display: none; /* Hide since title is in chrome */
+  text-align: left;
+}
+
+.card h4 {
+  color: #FF8C42;
+  font-size: 0.9rem;
+  margin: 0.75rem 0 0.35rem 0;
+  font-weight: 600;
+  text-align: left;
+}
+
+.card p {
+  color: #CBD5E1;
+  text-align: left;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  margin: 0 0 0.5rem 0;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.35rem 0 0 0;
+  text-align: left;
+}
+
+.card li {
+  color: #E2E8F0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  text-align: left;
+  padding-left: 1.1rem;
+  position: relative;
+  margin-bottom: 0.25rem;
+}
+
+.card li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: #FF8C42;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.card-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+}
+
+.card-tech-tag {
+  background: rgba(96, 165, 250, 0.15);
+  color: #60A5FA;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.card-tech-tag:hover {
+  background: rgba(96, 165, 250, 0.25);
+  border-color: rgba(96, 165, 250, 0.5);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1024px) {
+  .card-swap-container {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 768px) {
+  .card-swap-container {
+    transform: scale(0.75);
+  }
+  
+  .card h3 {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-swap-container {
+    transform: scale(0.55);
+  }
+  
+  .card h3 {
+    font-size: 0.95rem;
+  }
+  
+  .card h4 {
+    font-size: 0.85rem;
+  }
+}
