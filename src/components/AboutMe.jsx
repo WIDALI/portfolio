@@ -63,9 +63,9 @@ Whether it's building real-time race management systems, student productivity ap
             handle="WIDALI"
             status="Available for opportunities"
             contactText="LinkedIn"
-            avatarUrl="/Toadette.png"
-            iconUrl="/code-pattern.svg"
-            grainUrl="/grain-noise.svg"
+            avatarUrl={`${process.env.PUBLIC_URL}/Toadette.png`}
+            iconUrl={`${process.env.PUBLIC_URL}/code-pattern.svg`}
+            grainUrl={`${process.env.PUBLIC_URL}/grain-noise.svg`}
             showUserInfo={true}
             enableTilt={true}
             behindGlowColor="rgba(125, 190, 255, 0.67)"
