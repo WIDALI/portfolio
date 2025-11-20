@@ -26,7 +26,7 @@ const Hero = () => {
             <h2 className="role-text">
               <span className="role-item">Data Engineer</span>
               <span className="role-separator">|</span>
-              <span className="role-item">Software Engineer</span>
+              <span className="role-item">Full-Stack Developer</span>
               <span className="role-separator">|</span>
               <span className="role-item">UI/UX Designer</span>
             </h2>
