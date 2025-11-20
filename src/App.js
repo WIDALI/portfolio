@@ -303,7 +303,7 @@ function App() {
       <footer className="footer">
         <div className="footer-content">
           <p>© 2025 Widad Alli.</p>
-          <p>Built with CI/CD: caffeine in, code deploy.</p>
+          <p>Built with CI/CD: caffeine in, code deployed.</p>
           <div className="footer-links">
             <a href="https://github.com/WIDALI" target="_blank" rel="noopener noreferrer">
               GitHub
