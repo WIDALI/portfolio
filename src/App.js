@@ -36,7 +36,7 @@ function App() {
       githubLink: 'https://github.com/75-Hard-Student-Edition/75-Student',
       videoPlaceholder: '📚 75-Student Demo',
       deviceType: 'iphone',
-      videoSrc: `${process.env.PUBLIC_URL}/75_Student.mp4`,
+      videoSrc: "/portfolio/75_Student.mp4",
       reversed: false,
       cardContent: {
         idea: {
@@ -81,7 +81,7 @@ function App() {
       githubLink: 'https://github.com/WIDALI/race-control',
       videoPlaceholder: '🏃 Race Control Demo',
       deviceType: 'ipad',
-      videoSrc: `${process.env.PUBLIC_URL}/JS_Runner.mp4`,
+      videoSrc: "/portfolio/JS_Runner.mp4",
       reversed: true,
       cardContent: {
         idea: {
@@ -126,7 +126,7 @@ function App() {
       githubLink: 'https://github.com/WIDALI/scheduled_app',
       videoPlaceholder: '📅 Scheduled Demo',
       deviceType: 'macbook',
-      videoSrc: `${process.env.PUBLIC_URL}/Scheduled.mp4`,
+      videoSrc: "/portfolio/Scheduled.mp4",
       reversed: false,
       cardContent: {
         idea: {

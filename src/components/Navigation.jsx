@@ -66,7 +66,7 @@ const Navigation = () => {
                 <span>Get in Touch</span>
               </div>
               <a 
-                href={`${process.env.PUBLIC_URL}/Widad_Alli_CV.pdf`}
+                href="/portfolio/Widad_Alli_CV.pdf"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="dropdown-item glare-effect"

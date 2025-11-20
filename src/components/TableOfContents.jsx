@@ -7,21 +7,21 @@ const BASE_SECTIONS = [
   {
     id: "about",
     title: "About Me",
-    img: `${process.env.PUBLIC_URL}/aboutme.png`,
+    img: "/portfolio/aboutme.png",
     url: "#about",
     height: 350
   },
   {
     id: "industry",
     title: "Industry",
-    img: `${process.env.PUBLIC_URL}/industry.png`,
+    img: "/portfolio/industry.png",
     url: "#industry",
     height: 280
   },
   {
     id: "contact",
     title: "Contact",
-    img: `${process.env.PUBLIC_URL}/contact.png`,
+    img: "/portfolio/contact.png",
     url: "#contact",
     height: 240
   }
@@ -43,7 +43,7 @@ const TableOfContents = () => {
       {
         id: "projects",
         title: "Projects",
-        img: `${process.env.PUBLIC_URL}/Projects.png`,
+        img: "/portfolio/Projects.png",
         url: "#projects",
         height: 350
       }
