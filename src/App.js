@@ -207,7 +207,7 @@ function App() {
                 <div className="tech-tags-inline">
                   <span>PySpark</span>
                   <span>AWS S3</span>
-                  <span>Parquet</span>
+                  <span>DynamoDB</span>
                   <span>Jenkins</span>
                   <span>Bitbucket</span>
                 </div>
@@ -219,8 +219,8 @@ function App() {
                 <IndustryCarousel
                   slides={[
                     <p key="1">Architected and developed a production-scale Apache Spark application on AWS EMR Serverless to automatically detect, repair, and regenerate corrupted OpenSearch indexes. Initially tested using Jupyter notebooks attached to EMR clusters for interactive development and exploration, then transformed into a headless production solution orchestrated via AWS Step Functions.</p>,
-                    <p key="2">The solution processes millions of records across multiple indexes by comparing Parquet data versions with live index versions in OpenSearch, performing complex multi-table joins across 10+ related datasets, and creating large JSON transformations to handle large-scale rebuilds without impacting production systems. Deployed with blue/green deployment patterns in secure VPC environments.</p>,
-                    <p key="3">After initial testing and iteration, the solution was deployed, successfully repairing over 1 million outdated records across multiple production indexes.</p>
+                    <p key="2">The solution processes millions of records across multiple indexes by comparing Parquet versions in DynamoDB with live index versions in OpenSearch, performing complex multi-table joins across 10+ related datasets, and creating accurate JSON transformations to handle large-scale rebuilds without impacting production systems. Deployed with blue/green patterns in secure VPC environments.</p>,
+                    <p key="3">After initial testing and iteration, the solution was deployed, successfully repairing over 1 million outdated records across multiple production indexes, and can now be run on demand by stakeholders.</p>
                   ]}
                 />
                 <div className="tech-tags-inline">
@@ -237,7 +237,7 @@ function App() {
                 <IndustryCarousel
                   slides={[
                     <p key="1">Developed a serverless conflict reporting API for a client to automate the identification of rights disputes across multiple territories and data providers, with Salesforce-integrated user authentication and authorization.</p>,
-                    <p key="2">The solution was built using AWS Lambda to process client API requests with configurable parameters (territories, date ranges, conflicting parties). Utilised Athena SQL queries to process large Parquet datasets in S3. Implemented asynchronous processing with SFTP delivery and complex territory-based filtering logic.</p>,
+                    <p key="2">The solution was built using AWS Lambda to process client API requests with configurable parameters (territories, date ranges, conflicting parties). Designed and implemented a complex Athena SQL query comprising a dozen CTEs to efficiently process and join large Parquet datasets in S3, with asynchronous processing via SFTP delivery and sophisticated territory-based filtering logic.</p>,
                     <p key="3">Delivered a scalable system that processes millions of records and reduces conflict report generation from days to hours, enabling faster resolution of rights disputes for enterprise clients.</p>
                   ]}
                 />
