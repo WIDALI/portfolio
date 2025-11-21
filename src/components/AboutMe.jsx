@@ -10,11 +10,11 @@ const AboutMe = () => {
     window.open('https://www.linkedin.com/in/widad-alli-1b381331a/', '_blank', 'noopener,noreferrer');
   };
 
-  const aboutText = `I'm a passionate full-stack developer with expertise in building modern, scalable applications. My journey in software development has led me to work with cutting-edge technologies including React, Flutter, Node.js, and Spring Boot.
+  const aboutText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-As an innovator, I constantly seek new approaches to solve complex problems. As a creator, I bring ideas to life through clean, efficient code. As a developer, I'm committed to crafting exceptional user experiences.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-Whether it's building real-time race management systems, student productivity apps, or intuitive scheduling tools, I thrive on turning concepts into functional, elegant solutions that make a difference.`;
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.`;
 
   const skillCategories = {
     languages: [
