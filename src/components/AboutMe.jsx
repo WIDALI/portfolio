@@ -6,10 +6,6 @@ import './AboutMe.css';
 const AboutMe = () => {
   const [activeSkillCategory, setActiveSkillCategory] = useState('languages');
 
-  const handleContactClick = () => {
-    window.open('https://www.linkedin.com/in/widad-alli-1b381331a/', '_blank', 'noopener,noreferrer');
-  };
-
   const aboutText = `I'm a passionate full-stack developer with expertise in building modern, scalable applications. My journey in software development has led me to work with cutting-edge technologies including React, Flutter, Node.js, and Spring Boot.
 
 As an innovator, I constantly seek new approaches to solve complex problems. As a creator, I bring ideas to life through clean, efficient code. As a developer, I'm committed to crafting exceptional user experiences.
@@ -62,7 +58,6 @@ Whether it's building real-time race management systems, student productivity ap
             title="Software Engineer"
             handle="WIDALI"
             status="Available for opportunities"
-            contactText="LinkedIn"
             avatarUrl="/portfolio/Toadette.png"
             iconUrl="/portfolio/code-pattern.svg"
             grainUrl="/portfolio/grain-noise.svg"
@@ -71,7 +66,6 @@ Whether it's building real-time race management systems, student productivity ap
             behindGlowColor="rgba(125, 190, 255, 0.67)"
             behindGlowSize="50%"
             innerGradient="linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)"
-            onContactClick={handleContactClick}
             aboutText={aboutText}
           />
         </div>
