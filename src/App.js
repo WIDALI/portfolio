@@ -23,14 +23,14 @@ function App() {
   const projects = [
     {
       id: 'student-75',
-      title: '75-Hard: Student Edition',
+      title: '75 Hard: Student Edition',
+      status: 'IN PRODUCTION',
       description: 'A comprehensive student productivity application built with Flutter. Features task management, scheduling, points-based rewards system, and gamification elements to enhance student engagement.',
-      techStack: ['Flutter', 'Dart', 'SQLite', 'Java Backend', 'Spring Boot'],
+      techStack: ['Flutter', 'Dart', 'SQLite', 'Spring Boot (Java)'],
       features: [
         'Task and assignment tracking with categories',
         'Interactive scheduling system',
         'Points-based reward system with badges',
-        'Local database with SQLite',
         'Cross-platform support (iOS, Android, Desktop)'
       ],
       githubLink: 'https://github.com/75-Hard-Student-Edition/75-Student',
@@ -40,26 +40,25 @@ function App() {
       reversed: false,
       cardContent: {
         idea: {
-          description: 'Inspired by the 75-Hard mental toughness program, this app gamifies student productivity to build lasting academic habits.',
-          problem: 'Students struggle to maintain consistent study habits and track their academic progress effectively, leading to last-minute cramming and burnout.',
-          solution: 'A gamified productivity app that rewards daily consistency with points and badges, transforming mundane tasks into an engaging journey of self-improvement.'
+          description: 'Inspired by the 75-Hard mental discipline program, this app gamifies student productivity to build lasting habits, whether financial, academic, or personal growth.',
+          problem: 'Students struggle to maintain consistent study habits and a healthy social life. Risk of burnout without the ability to track their progress effectively, often leads to last-minute cramming and bad results.',
+          solution: 'A gamified productivity app that rewards daily consistency with points and badges, transforming mundane tasks into an engaging journey of self-improvement, collecting Wonders of teh World and competing with friends.'
         },
         build: {
-          overview: 'Built over 3 months as a full-stack mobile application with a Flutter frontend and Spring Boot backend, featuring local and remote database synchronization.',
+          overview: 'Built over 3 months as a full-stack mobile application with a Flutter frontend and Spring Boot (Java) backend, featuring local and remote database synchronisation.',
           highlights: [
             'Implemented SQLite for offline-first functionality',
-            'Designed custom UI components with Material Design',
+            'Designed custom UI components',
             'Created a RESTful API with Spring Boot for data sync',
-            'Built comprehensive test suite with >80% coverage'
+            'Built comprehensive test suite'
           ],
           challenge: 'Synchronizing local SQLite data with the remote database while maintaining app performance required implementing a robust queue system and conflict resolution strategy.'
         },
         technologies: {
-          description: 'A hybrid architecture combining Flutter for cross-platform UI with a Java Spring Boot backend for scalability.',
-          stack: ['Flutter', 'Dart', 'SQLite', 'Spring Boot', 'Java', 'REST API', 'Material Design', 'JUnit'],
+          description: 'A hybrid architecture combining Flutter for cross-platform UI with a Spring Boot (Java) backend for scalability.',
+          stack: ['Flutter', 'Dart', 'SQLite', 'Spring Boot (Java)', 'REST API'],
           features: [
             'Cross-platform deployment (iOS, Android, Desktop)',
-            'Local-first architecture with cloud sync',
             'Real-time badge animations and rewards',
             'Comprehensive task categorization system'
           ]
@@ -68,9 +67,9 @@ function App() {
     },
     {
       id: 'race-control',
-      title: 'Race Control Dashboard',
+      title: 'Race Control',
       description: 'A real-time race management system featuring live runner tracking, lap timing, and dynamic leaderboards. Built with Node.js and vanilla JavaScript for optimal performance. Used by race assistants on iPad for easy mobility and real-time updates.',
-      techStack: ['JavaScript', 'Node.js', 'Express', 'HTML/CSS', 'Real-time Updates'],
+      techStack: ['JavaScript', 'Node.js', 'Express', 'HTML/CSS', 'Offline Sync'],
       features: [
         'Live race tracking with automatic lap detection',
         'Real-time leaderboard updates',
@@ -85,15 +84,16 @@ function App() {
       reversed: true,
       cardContent: {
         idea: {
-          description: 'A lightweight, iPad-optimized race management system for assistants to track runners in real-time during events.',
-          problem: 'Traditional race timing systems are expensive, complex, and require dedicated hardware. Race assistants needed a simple, mobile solution.',
+          description: 'A lightweight race management system for race assistants to track runners in real-time during events.',
+          problem: 'Traditional race timing systems are often complex, and hard to log laps in real-time withot latency. Race assistants needed a simple, mobile solution.',
           solution: 'A web-based dashboard that turns any iPad into a professional race control station, with instant updates and intuitive controls.'
         },
         build: {
-          overview: 'Built in 2 weeks using vanilla JavaScript and Node.js, prioritizing simplicity and real-time performance without heavy frameworks.',
+          overview: 'Built using vanilla JavaScript and Node.js, prioritizing simplicity and real-time performance without heavy frameworks.',
           highlights: [
             'Zero-framework frontend for maximum speed',
             'JSON file-based persistence for portability',
+            'Offline sync for uninterrupted race tracking',
             'Auto-refresh leaderboard every 3 seconds',
             'One-tap lap recording interface'
           ],
@@ -101,9 +101,10 @@ function App() {
         },
         technologies: {
           description: 'Pure JavaScript for the frontend with Node.js/Express backend, chosen for minimal setup and maximum portability.',
-          stack: ['JavaScript', 'Node.js', 'Express', 'HTML5', 'CSS3', 'JSON Storage'],
+          stack: ['JavaScript', 'Node.js', 'Express', 'HTML', 'CSS', 'JSON Storage'],
           features: [
             'Real-time updates without WebSockets',
+            'Offline sync for uninterrupted tracking',
             'Responsive design optimized for iPad',
             'Instant lap time calculations',
             'Persistent runner database'
@@ -115,7 +116,8 @@ function App() {
       id: 'scheduled',
       title: 'Scheduled App',
       description: 'A clean and intuitive scheduling application for personal time management. Built with Flutter, featuring calendar views, task prioritization, and notification reminders.',
-      techStack: ['Flutter', 'Dart', 'Provider', 'Local Notifications', 'Material Design'],
+      techStack: ['Flutter', 'Dart', 'HIVE Database', 'CSV Import', 'Decision Tree Algorithm'],
+      decisionMapImage: '/portfolio/Decision_Map.png',
       features: [
         'Interactive calendar interface',
         'Task creation and management',
@@ -130,30 +132,32 @@ function App() {
       reversed: false,
       cardContent: {
         idea: {
-          description: 'A minimalist scheduling app focused on clarity and ease of use, perfect for individuals who want to manage their time without complexity.',
-          problem: 'Most scheduling apps are bloated with features users never use, creating a cluttered experience that defeats the purpose of simplicity.',
+          description: 'A minimalist scheduling app focused on clarity and ease of use, perfect for individuals who want to manage a library/study session without complexity.',
+          problem: 'Most scheduling apps are bloated with features users never use, creating a cluttered experience that defeats the purpose of simplicity. This gives clear delegations to task to ensure the most productive use of time.',
           solution: 'A streamlined interface that focuses on the essentials: creating tasks, setting priorities, and receiving timely reminders—nothing more, nothing less.'
         },
         build: {
-          overview: 'Developed as a personal productivity tool, later expanded with community feedback to include priority levels and enhanced calendar views.',
-          highlights: [
-            'Provider state management for reactive UI',
-            'Custom calendar widget with gesture controls',
-            'Local notification system with snooze',
-            'Material Design 3 theming'
-          ],
+          overview: 'Developed as a personal productivity tool, later expanded to include priority levels and enhanced calendar views.',
+           highlights: [
+             'Gantt chart visualisation of tasks',
+             'Decision tree algorithm that asks targeted questions to auto-prioritize tasks',
+             'Interactive decision map overlay (click to view full flowchart)',
+             'HIVE database for fast local storage',
+             'CSV import for bulk task management'
+           ],
           challenge: 'Creating a custom calendar widget that felt native while supporting complex gesture interactions required deep Flutter animation knowledge and custom render objects.'
         },
-        technologies: {
-          description: 'Flutter with Provider for state management, prioritizing native performance and smooth animations.',
-          stack: ['Flutter', 'Dart', 'Provider', 'Local Notifications', 'Material Design 3', 'Shared Preferences'],
-          features: [
-            'Cross-platform (iOS, Android, macOS, Windows)',
-            'Offline-first with local storage',
-            'Custom gesture-based calendar',
-            'Smart notification scheduling'
-          ]
-        }
+         technologies: {
+           description: 'Flutter with a custom decision tree algorithm for intelligent task prioritization, HIVE for efficient local storage, and CSV import for bulk data management.',
+           stack: ['Flutter', 'Dart', 'HIVE Database', 'CSV Parser', 'Decision Tree Algorithm', 'Provider', 'Local Notifications'],
+           features: [
+             'Cross-platform (iOS, Android, macOS, Windows)',
+             'Algorithm-driven task prioritization via decision tree',
+             'Offline-first with HIVE database storage',
+             'CSV import/export for task data',
+             'Interactive Gantt chart with decision map overlay'
+           ]
+         }
       }
     }
   ];
@@ -185,11 +189,10 @@ function App() {
             <div className="industry-role">
               <div className="role-header">
                 <h3>Software Engineering Placement</h3>
-                <span className="role-duration">2025 - Present</span>
+                <span className="role-duration">Aug 2025 - Present</span>
               </div>
               <p className="role-description">
-                Currently completing a full-year industrial placement as part of my university program, working on AWS infrastructure and Big Data solutions. 
-                Working primarily independently with supervisor code reviews, handling complex data engineering challenges in a production environment.
+                Currently completing a full-year industrial placement as part of my university program, working with AWS services across Big Data projects and CopyRight product development. Working in a team with experienced engineers as well as independently with supervisor code reviews, handling complex data engineering challenges for production use.
               </p>
             </div>
 
@@ -255,16 +258,12 @@ function App() {
             <div className="industry-stack">
               <h4>Core Technologies</h4>
               <div className="stack-tags">
-                <span className="stack-tag">AWS</span>
+                <span className="stack-tag">AWS Services</span>
                 <span className="stack-tag">PySpark</span>
                 <span className="stack-tag">Apache Spark</span>
                 <span className="stack-tag">Bitbucket</span>
                 <span className="stack-tag">Jenkins</span>
-                <span className="stack-tag">Elasticsearch</span>
-                <span className="stack-tag">Lambda</span>
-                <span className="stack-tag">Athena</span>
-                <span className="stack-tag">S3</span>
-                <span className="stack-tag">EMR</span>
+                <span className="stack-tag">CDK Deployment</span>
               </div>
             </div>
           </div>

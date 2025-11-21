@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MacBookMockup from './MacBookMockup';
 import IPhoneMockup from './iPhoneMockup';
 import IPadMockup from './iPadMockup';
@@ -16,8 +16,11 @@ const ProjectSection = ({
   videoSrc,
   deviceType = 'macbook', // 'macbook', 'iphone', or 'ipad'
   reversed = false,
-  cardContent // { idea, build, technologies }
+  cardContent, // { idea, build, technologies }
+  status, // optional status badge (e.g., "IN PRODUCTION")
+  decisionMapImage // optional decision map image path
 }) => {
+  const [showDecisionMap, setShowDecisionMap] = useState(false);
   return (
     <section id={id} className={`project-section ${reversed ? 'reversed' : ''}`}>
       <div className="project-container">
@@ -32,7 +35,21 @@ const ProjectSection = ({
         </div>
         
         <div className="project-info-cards">
-          <h2 className="project-title-main">{title}</h2>
+          <div className="project-header">
+            <h2 className="project-title-main">{title}</h2>
+            <div className="project-badges">
+              {status && <span className="project-status-badge">{status}</span>}
+              {decisionMapImage && (
+                <button 
+                  className="decision-map-button" 
+                  onClick={() => setShowDecisionMap(true)}
+                  aria-label="View Decision Map"
+                >
+                  🗺️ View Decision Map
+                </button>
+              )}
+            </div>
+          </div>
           <div style={{ height: '450px', position: 'relative', marginTop: '1rem' }}>
             <CardSwap
               width={560}
@@ -133,6 +150,25 @@ const ProjectSection = ({
           </div>
         </div>
       </div>
+      
+      {/* Decision Map Overlay */}
+      {showDecisionMap && decisionMapImage && (
+        <div className="decision-map-overlay" onClick={() => setShowDecisionMap(false)}>
+          <div className="decision-map-modal" onClick={(e) => e.stopPropagation()}>
+            <button 
+              className="close-button" 
+              onClick={() => setShowDecisionMap(false)}
+              aria-label="Close Decision Map"
+            >
+              ✕
+            </button>
+            <h3>Decision Tree Algorithm</h3>
+            <div className="decision-map-content">
+              <img src={decisionMapImage} alt="Decision Tree Map" />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
