@@ -43,7 +43,7 @@ body {
 
 .content-wrapper {
   position: relative;
-  z-index: 1;
+  z-index: 5;
   min-height: 100vh;
   padding-top: 100vh;
 }

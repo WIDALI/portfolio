@@ -167,7 +167,8 @@ function App() {
           transform: `scale(${1 + scrollProgress * 0.5})`,
           opacity: Math.max(0, 1 - scrollProgress * 1.2),
           pointerEvents: scrollProgress > 0.5 ? 'none' : 'auto',
-          visibility: scrollProgress > 0.9 ? 'hidden' : 'visible'
+          visibility: scrollProgress > 0.9 ? 'hidden' : 'visible',
+          zIndex: scrollProgress > 0.5 ? 0 : 10
         }}
       >
         <Hero />
