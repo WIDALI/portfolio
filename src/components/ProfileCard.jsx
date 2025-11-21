@@ -258,17 +258,15 @@ const ProfileCardComponent = ({
                       <div className="pc-status">{status}</div>
                     </div>
                   </div>
-                  {onContactClick && (
-                    <button
-                      className="pc-contact-btn"
-                      onClick={handleContactClick}
-                      style={{ pointerEvents: 'auto' }}
-                      type="button"
-                      aria-label={`Contact ${name || 'user'}`}
-                    >
-                      {contactText}
-                    </button>
-                  )}
+                  <button
+                    className="pc-contact-btn"
+                    onClick={handleContactClick}
+                    style={{ pointerEvents: 'auto' }}
+                    type="button"
+                    aria-label={`Contact ${name || 'user'}`}
+                  >
+                    {contactText}
+                  </button>
                 </div>
               )}
             </div>
