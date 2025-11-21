@@ -296,7 +296,7 @@ function App() {
                 <h3>LinkedIn</h3>
                 <p>Connect professionally</p>
               </a>
-              <a href="mailto:widad.alli@example.com" className="contact-card">
+              <a href="mailto:widadoalli@gmail.com" className="contact-card">
                 <span className="contact-icon">📧</span>
                 <h3>Email</h3>
                 <p>Send me a message</p>
@@ -316,7 +316,7 @@ function App() {
             <a href="https://www.linkedin.com/in/widad-alli-1b381331a/" target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
-            <a href="mailto:widad.alli@example.com">
+            <a href="mailto:widadoalli@gmail.com">
               Email
             </a>
           </div>
