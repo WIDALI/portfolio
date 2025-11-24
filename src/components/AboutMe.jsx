@@ -10,11 +10,11 @@ const AboutMe = () => {
     window.open('https://www.linkedin.com/in/widad-alli-1b381331a/', '_blank', 'noopener,noreferrer');
   };
 
-  const aboutText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  const aboutText = `I am a 21-year-old undergraduate MEng Computer Science student currently on an industry placement.
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Beyond the data engineering experience I've acquired through my placement, I'm passionate about building complete applications from the ground up. Through both personal and university projects, I have come to learn the art of compartmentalization and encapsulation;
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.`;
+bringing together technical depth, design thinking, and a genuine curiosity for how systems work—from database optimizations and cloud technologies to user psychology.`;
 
   const skillCategories = {
     languages: [
@@ -66,7 +66,7 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor
             avatarUrl="/portfolio/blank-profile-picture.png"
             iconUrl="/portfolio/code-pattern.svg"
             grainUrl="/portfolio/grain-noise.svg"
-            showUserInfo={false}
+            showUserInfo={true}
             enableTilt={true}
             behindGlowColor="rgba(125, 190, 255, 0.67)"
             behindGlowSize="50%"

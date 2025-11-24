@@ -3,6 +3,13 @@ import Beams from './Beams';
 import './Hero.css';
 
 const Hero = () => {
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="hero" className="hero">
       <div className="hero-beams">
@@ -23,13 +30,10 @@ const Hero = () => {
             Widad Alli
           </h1>
           <div className="hero-roles">
-            <h2 className="role-text">
-              <span className="role-item">Data Engineer</span>
-              <span className="role-separator">|</span>
-              <span className="role-item">Full-Stack Developer</span>
-              <span className="role-separator">|</span>
-              <span className="role-item">UI/UX Designer</span>
+            <h2 className="hero-subtitle" onClick={scrollToAbout}>
+              Software Engineer
             </h2>
+            <p className="hero-specialization">Full-Stack Development  •  Data Engineering  •  Mobile & Web UI/UX</p>
           </div>
         </div>
       </div>

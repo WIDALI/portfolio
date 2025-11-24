@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useCallback, useMemo } from 'react';
+import FloatingLines from './FloatingLines';
 import './ProfileCard.css';
 
 const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)';
@@ -239,6 +240,19 @@ const ProfileCardComponent = ({
           <div className="pc-inside">
             <div className="pc-shine" />
             <div className="pc-glare" />
+            <div style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0, zIndex: 2, pointerEvents: 'none', borderRadius: '30px', overflow: 'hidden' }}>
+              <FloatingLines 
+                enabledWaves={['top', 'middle', 'bottom']}
+                lineCount={[10, 15, 20]}
+                lineDistance={[8, 6, 4]}
+                bendRadius={5.0}
+                bendStrength={-0.5}
+                interactive={true}
+                parallax={true}
+                mixBlendMode="screen"
+                linesGradient={['#60A5FA', '#8B5CF6', '#EC4899']}
+              />
+            </div>
             <div className="pc-content pc-avatar-content">
               <img
                 className="avatar"
@@ -254,19 +268,10 @@ const ProfileCardComponent = ({
                 <div className="pc-user-info">
                   <div className="pc-user-details">
                     <div className="pc-user-text">
-                      <div className="pc-handle">@{handle}</div>
-                      <div className="pc-status">{status}</div>
+                      <div className="pc-name">{name}</div>
+                      <div className="pc-title">{title}</div>
                     </div>
                   </div>
-                  <button
-                    className="pc-contact-btn"
-                    onClick={handleContactClick}
-                    style={{ pointerEvents: 'auto' }}
-                    type="button"
-                    aria-label={`Contact ${name || 'user'}`}
-                  >
-                    {contactText}
-                  </button>
                 </div>
               )}
             </div>
@@ -280,8 +285,6 @@ const ProfileCardComponent = ({
         </section>
         <section className="pc-card pc-card-back">
           <div className="pc-back-content">
-            <h2>{name}</h2>
-            <h3>{title}</h3>
             <div className="pc-back-text">
               {aboutText}
             </div>

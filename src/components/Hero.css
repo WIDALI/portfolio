@@ -39,43 +39,39 @@
   line-height: 1.1;
   margin-bottom: 2.5rem;
   text-shadow: 0 0 40px rgba(255, 107, 53, 0.3);
+  text-transform: uppercase;
 }
 
 .hero-roles {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 0;
 }
 
-.role-text {
+.hero-subtitle {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
+  font-size: 2rem;
   font-style: italic;
-  font-size: 1.5rem;
   color: #FFFFFF;
   margin: 0;
-  letter-spacing: 0.02em;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.role-item {
+  letter-spacing: -0.01em;
   position: relative;
   display: inline-block;
+  cursor: pointer;
   transition: all 0.3s ease;
   padding: 0 20px;
 }
 
-.role-item::before,
-.role-item::after {
+.hero-subtitle::before,
+.hero-subtitle::after {
   content: '';
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 1.75rem;
+  font-size: 2rem;
   color: #FF6B35;
   font-weight: 700;
   font-style: normal;
@@ -83,35 +79,39 @@
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.role-item::before {
+.hero-subtitle::before {
   content: '{';
   left: 0;
 }
 
-.role-item::after {
+.hero-subtitle::after {
   content: '}';
   right: 0;
 }
 
-.role-item:hover::before {
+.hero-subtitle:hover::before {
   opacity: 1;
   left: -10px;
 }
 
-.role-item:hover::after {
+.hero-subtitle:hover::after {
   opacity: 1;
   right: -10px;
 }
 
-.role-item:hover {
+.hero-subtitle:hover {
   color: #FF8C42;
 }
 
-.role-separator {
+.hero-specialization {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
   color: #60A5FA;
-  font-weight: 400;
-  font-style: normal;
+  margin: 0;
+  letter-spacing: 0.02em;
 }
+
 
 .scroll-indicator {
   position: absolute;
@@ -170,26 +170,25 @@
     font-size: 3rem;
   }
 
-  .role-text {
-    font-size: 1.15rem;
-    gap: 1rem;
+  .hero-subtitle {
+    font-size: 1.75rem;
   }
 
-  .role-item {
-    padding: 0 15px;
+  .hero-subtitle::before,
+  .hero-subtitle::after {
+    font-size: 1.75rem;
   }
 
-  .role-item::before,
-  .role-item::after {
-    font-size: 1.5rem;
-  }
-
-  .role-item:hover::before {
+  .hero-subtitle:hover::before {
     left: -8px;
   }
 
-  .role-item:hover::after {
+  .hero-subtitle:hover::after {
     right: -8px;
+  }
+
+  .hero-specialization {
+    font-size: 1.1rem;
   }
 
   .scroll-indicator {
@@ -202,31 +201,26 @@
     font-size: 2.25rem;
   }
 
-  .role-text {
-    font-size: 0.95rem;
-    gap: 0.75rem;
-    flex-direction: column;
-  }
-
-  .role-separator {
-    display: none;
-  }
-
-  .role-item {
+  .hero-subtitle {
+    font-size: 1.5rem;
     padding: 0 12px;
   }
 
-  .role-item::before,
-  .role-item::after {
-    font-size: 1.25rem;
+  .hero-subtitle::before,
+  .hero-subtitle::after {
+    font-size: 1.5rem;
   }
 
-  .role-item:hover::before {
+  .hero-subtitle:hover::before {
     left: -6px;
   }
 
-  .role-item:hover::after {
+  .hero-subtitle:hover::after {
     right: -6px;
+  }
+
+  .hero-specialization {
+    font-size: 1rem;
   }
 
   .hero-content {

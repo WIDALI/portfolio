@@ -18,9 +18,11 @@ const ProjectSection = ({
   reversed = false,
   cardContent, // { idea, build, technologies }
   status, // optional status badge (e.g., "IN PRODUCTION")
-  decisionMapImage // optional decision map image path
+  decisionMapImage, // optional decision map image path
+  figmaDesignImage // optional Figma design image path
 }) => {
   const [showDecisionMap, setShowDecisionMap] = useState(false);
+  const [showFigmaDesign, setShowFigmaDesign] = useState(false);
   return (
     <section id={id} className={`project-section ${reversed ? 'reversed' : ''}`}>
       <div className="project-container">
@@ -46,6 +48,15 @@ const ProjectSection = ({
                   aria-label="View Decision Map"
                 >
                   🗺️ View Decision Map
+                </button>
+              )}
+              {figmaDesignImage && (
+                <button 
+                  className="figma-design-button" 
+                  onClick={() => setShowFigmaDesign(true)}
+                  aria-label="View Figma Design"
+                >
+                  Figma Design
                 </button>
               )}
             </div>
@@ -165,6 +176,25 @@ const ProjectSection = ({
             <h3>Decision Tree Algorithm</h3>
             <div className="decision-map-content">
               <img src={decisionMapImage} alt="Decision Tree Map" />
+            </div>
+          </div>
+        </div>
+      )}
+      
+      {/* Figma Design Overlay */}
+      {showFigmaDesign && figmaDesignImage && (
+        <div className="decision-map-overlay" onClick={() => setShowFigmaDesign(false)}>
+          <div className="decision-map-modal" onClick={(e) => e.stopPropagation()}>
+            <button 
+              className="close-button" 
+              onClick={() => setShowFigmaDesign(false)}
+              aria-label="Close Figma Design"
+            >
+              ✕
+            </button>
+            <h3>Figma Design Layout</h3>
+            <div className="decision-map-content">
+              <img src={figmaDesignImage} alt="Figma Design Layout" />
             </div>
           </div>
         </div>
