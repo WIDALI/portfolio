@@ -63,7 +63,7 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor
             handle="WIDALI"
             status="Available for opportunities"
             contactText="LinkedIn"
-            avatarUrl="/portfolio/Toadette.png"
+            avatarUrl="/portfolio/blank-profile-picture.png"
             iconUrl="/portfolio/code-pattern.svg"
             grainUrl="/portfolio/grain-noise.svg"
             showUserInfo={false}
