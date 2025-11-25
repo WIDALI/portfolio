@@ -497,3 +497,86 @@
     --sunpillar-clr-6: var(--sunpillar-1);
   }
 }
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .pc-card-wrapper {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .pc-card {
+    max-height: 480px;
+    height: 70svh;
+  }
+
+  .pc-card-shell {
+    height: 480px;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0.75rem;
+  }
+
+  .pc-name {
+    font-size: 1.4rem;
+  }
+
+  .pc-title {
+    font-size: 0.95rem;
+  }
+
+  .pc-card-back {
+    padding: 2rem 1.5rem;
+  }
+
+  .pc-back-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .pc-card {
+    max-height: 420px;
+    height: 65svh;
+  }
+
+  .pc-card-shell {
+    height: 420px;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.5rem;
+  }
+
+  .pc-name {
+    font-size: 1.2rem;
+  }
+
+  .pc-title {
+    font-size: 0.85rem;
+  }
+
+  .pc-card-back {
+    padding: 1.5rem 1rem;
+  }
+
+  .pc-back-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .pc-back-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .pc-back-content h3 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}

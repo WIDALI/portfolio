@@ -5,6 +5,9 @@ const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [projectsOpen, setProjectsOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
+  const [mobileContactOpen, setMobileContactOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,7 +18,22 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (mobileMenuOpen && !event.target.closest('.nav-links') && !event.target.closest('.hamburger')) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [mobileMenuOpen]);
+
   const scrollToSection = (sectionId) => {
+    setMobileMenuOpen(false); // Close mobile menu on navigation
+    setMobileProjectsOpen(false); // Close dropdowns on navigation
+    setMobileContactOpen(false);
     if (sectionId === 'hero') {
       // Scroll to top for hero section
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -27,23 +45,65 @@ const Navigation = () => {
     }
   };
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+    // Close dropdowns when closing mobile menu
+    if (mobileMenuOpen) {
+      setMobileProjectsOpen(false);
+      setMobileContactOpen(false);
+    }
+  };
+
+  const toggleMobileProjects = () => {
+    setMobileProjectsOpen(!mobileProjectsOpen);
+  };
+
+  const toggleMobileContact = () => {
+    setMobileContactOpen(!mobileContactOpen);
+  };
+
   return (
     <nav className={`navigation ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <div className="nav-logo" onClick={() => scrollToSection('hero')}>
           Portfolio
         </div>
-        <ul className="nav-links">
+        
+        {/* Hamburger Menu Button */}
+        <button 
+          className={`hamburger ${mobileMenuOpen ? 'open' : ''}`} 
+          onClick={toggleMobileMenu}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
           <li onClick={() => scrollToSection('hero')}>Home</li>
           <li onClick={() => scrollToSection('about')}>About</li>
           <li onClick={() => scrollToSection('industry')}>Industry</li>
           <li 
-            className="nav-dropdown"
+            className={`nav-dropdown ${mobileProjectsOpen ? 'open' : ''}`}
             onMouseEnter={() => setProjectsOpen(true)}
             onMouseLeave={() => setProjectsOpen(false)}
           >
-            <span onClick={() => scrollToSection('projects')}>Projects</span>
-            <div className={`dropdown-menu ${projectsOpen ? 'open' : ''}`}>
+            <span 
+              className="dropdown-trigger"
+              onClick={(e) => {
+                if (window.innerWidth <= 768) {
+                  e.stopPropagation();
+                  toggleMobileProjects();
+                } else {
+                  scrollToSection('projects');
+                }
+              }}
+            >
+              Projects
+              <span className={`dropdown-arrow ${mobileProjectsOpen ? 'rotated' : ''}`}>▼</span>
+            </span>
+            <div className={`dropdown-menu ${projectsOpen || mobileProjectsOpen ? 'open' : ''}`}>
               <div className="dropdown-item glare-effect" onClick={() => scrollToSection('student-75')}>
                 <span>75-Student</span>
               </div>
@@ -56,12 +116,25 @@ const Navigation = () => {
             </div>
           </li>
           <li 
-            className="nav-dropdown"
+            className={`nav-dropdown ${mobileContactOpen ? 'open' : ''}`}
             onMouseEnter={() => setContactOpen(true)}
             onMouseLeave={() => setContactOpen(false)}
           >
-            <span onClick={() => scrollToSection('contact')}>Contact</span>
-            <div className={`dropdown-menu ${contactOpen ? 'open' : ''}`}>
+            <span 
+              className="dropdown-trigger"
+              onClick={(e) => {
+                if (window.innerWidth <= 768) {
+                  e.stopPropagation();
+                  toggleMobileContact();
+                } else {
+                  scrollToSection('contact');
+                }
+              }}
+            >
+              Contact
+              <span className={`dropdown-arrow ${mobileContactOpen ? 'rotated' : ''}`}>▼</span>
+            </span>
+            <div className={`dropdown-menu ${contactOpen || mobileContactOpen ? 'open' : ''}`}>
               <div className="dropdown-item glare-effect" onClick={() => scrollToSection('contact')}>
                 <span>Get in Touch</span>
               </div>
