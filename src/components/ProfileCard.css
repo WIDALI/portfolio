@@ -105,8 +105,20 @@
   pointer-events: all;
 }
 
-.pc-card-wrapper:hover .pc-card-shell {
+.pc-card-wrapper:hover .pc-card-shell,
+.pc-card-wrapper.flipped .pc-card-shell {
   transform: rotateY(180deg) !important;
+}
+
+/* On mobile, only use click, not hover */
+@media (max-width: 768px) {
+  .pc-card-wrapper:hover .pc-card-shell {
+    transform: rotateY(0deg);
+  }
+  
+  .pc-card-wrapper.flipped .pc-card-shell {
+    transform: rotateY(180deg) !important;
+  }
 }
 
 .pc-card-front,

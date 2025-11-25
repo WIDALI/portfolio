@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback, useMemo } from 'react';
+import React, { useEffect, useRef, useCallback, useMemo, useState } from 'react';
 import FloatingLines from './FloatingLines';
 import './ProfileCard.css';
 
@@ -39,6 +39,12 @@ const ProfileCardComponent = ({
 
   const enterTimerRef = useRef(null);
   const leaveRafRef = useRef(null);
+
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleCardClick = useCallback(() => {
+    setIsFlipped(prev => !prev);
+  }, []);
 
   const tiltEngine = useMemo(() => {
     if (!enableTilt) return null;
@@ -231,8 +237,9 @@ const ProfileCardComponent = ({
   return (
     <div 
       ref={wrapRef} 
-      className={`pc-card-wrapper ${className}`.trim()} 
+      className={`pc-card-wrapper ${isFlipped ? 'flipped' : ''} ${className}`.trim()} 
       style={cardStyle}
+      onClick={handleCardClick}
     >
       {behindGlowEnabled && <div className="pc-behind" />}
       <div ref={shellRef} className="pc-card-shell">
