@@ -208,9 +208,9 @@ function App() {
                 <h4>Inbound/Outbound Reporting Enhancement</h4>
                 <IndustryCarousel
                   slides={[
-                    <p key="1">Designed and built an end-to-end data reconciliation pipeline using PySpark on AWS Athena to validate data integrity across XML ingestion, Parquet transformation, and response processing stages. Architected a FileLoader orchestrator and modular S3-based parameter system that allows non-technical stakeholders to configure dates, environments, and sources without touching code.</p>,
-                    <p key="2">Implemented the entire recon logic from scratch, validating millions of records daily across three pipeline stages. Developed performance optimizations that reduced query runtime by 75% through strategic use of partition pruning and broadcast joins. Built weekly CSV reporting system with detailed error diagnostics for data quality monitoring.</p>,
-                    <p key="3">Successfully deployed to production via Jenkins CI/CD across test/UAT/prod environments. The system now processes hundreds of thousands of records daily, enabling stakeholders to run ad-hoc historical analyses and catch data quality issues within hours instead of weeks.</p>
+                    <p key="1">Engineered an automated data reconciliation system using PySpark on AWS Athena to validate data integrity across a pipeline. Evolved from interactive Athena notebooks to a production solution with modular S3-based scripts enabling on-technical stakeholders to configure parameters (dates, environments) without code changes.</p>,
+                    <p key="2">The system validates millions of records daily across three stages: XML declaration ingestion, Parquet transformation, and successful processing responses. Developed performance optimisations that reduced query runtime by 75%, with cost optimised Spark compute. Deployed via Jenkins CI/CD across test/UAT/prod environments.</p>,
+                    <p key="3">The system now processes hundreds of thousands of records daily, enabling stakeholders to run ad-hoc historical analyses and catch data quality issues within hours instead of weeks with detailed error diagnostics for troubleshooting and debugging.</p>
                     
                   ]}
                 />
@@ -228,9 +228,9 @@ function App() {
                 <h4>OpenSearch Index Repair </h4>
                 <IndustryCarousel
                   slides={[
-                    <p key="1">Developed the core Spark logic for a production-scale index repair system that automatically detects, repairs, and regenerates corrupted OpenSearch indexes. Built and tested the detection algorithms interactively using Jupyter notebooks on EMR clusters, then converted the solution into headless Python for automated execution. Worked within a secure VPC environment using bastion-based access.</p>,
+                    <p key="1">Developed the core Spark logic for a production-scale index repair system that automatically detects, repairs, and regenerates corrupted OpenSearch indexes. Initially tested using Jupyter notebooks attached to EMR clusters for interactive development and initial exploration, then converted the solution into headless Pytho scripts for automated execution via AWS Step Fuctions. Worked within a secure VPC environment using bastion-based access.</p>,
                     <p key="2">Implemented complex multi-table joins across 10+ related datasets, comparing Parquet versions stored in DynamoDB against live OpenSearch indexes to identify discrepancies. Created JSON transformation logic to accurately reconstruct missing or corrupted index entries. The Spark jobs process millions of records while maintaining data consistency during rebuilds.</p>,
-                    <p key="3">Contributed to a system that successfully repaired over 1 million outdated records across multiple production indexes. The solution is now integrated into automated workflows and can be triggered on-demand by stakeholders for safe, controlled index maintenance operations.</p>
+                    <p key="3">The system successfully repaired over 1 million outdated records across multiple production indexes. The solution is now integrated into automated workflows and can be triggered on-demand by stakeholders for safe, controlled index maintenance operations.</p>
                   ]}
                 />
                 <div className="tech-tags-inline">
@@ -246,9 +246,9 @@ function App() {
                 <h4>Conflict Reporting API</h4>
                 <IndustryCarousel
                   slides={[
-                    <p key="1">Contributed to a serverless conflict reporting API that automates the identification of rights disputes across multiple territories and data providers. Working alongside senior engineers, I focused on the data layer, designing the query logic that powers the reporting system. Developed and tested queries via bastion access to secure EMR notebooks within the VPC.</p>,
-                    <p key="2">Designed and implemented a highly complex Athena SQL query comprising a dozen Common Table Expressions (CTEs) to efficiently process and join large Parquet datasets in S3. The query handles multi-territory filtering, conflicting party identification, and date-range analysis across millions of records. Optimized for asynchronous execution to support SFTP-based report delivery to clients.</p>,
-                    <p key="3">The data logic I built now processes millions of records and reduces conflict report generation from days to hours, enabling enterprise clients to resolve rights disputes significantly faster. The API integrates with Salesforce authentication and supports configurable parameters for flexible reporting.</p>
+                    <p key="1">Contributed to a serverless conflict reporting API that automates the identification of rights disputes across multiple territories and data providers. Working alongside a senior engineer, I focused on the data layer, designing the query logic that powers the reporting system.</p>,
+                    <p key="2">Designed and implemented a highly complex Athena SQL query comprising a dozen CTEs to efficiently process and join large Parquet datasets in S3. The query handles multi-territory filtering, conflicting party identification, and date-range analysis across millions of records. Optimised for asynchronous execution to support SFTP-based report delivery to clients.</p>,
+                    <p key="3">The data logic I built now processes millions of records, enabling clients to resolve rights disputes significantly faster. The API integrates with Salesforce authentication and supports configurable parameters for flexible reporting.</p>
                   ]}
                 />
                 <div className="tech-tags-inline">

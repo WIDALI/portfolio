@@ -6,10 +6,6 @@ import './AboutMe.css';
 const AboutMe = () => {
   const [activeSkillCategory, setActiveSkillCategory] = useState('languages');
 
-  const handleContactClick = () => {
-    window.open('https://www.linkedin.com/in/widad-alli-1b381331a/', '_blank', 'noopener,noreferrer');
-  };
-
   const aboutText = `I am a 21-year-old undergraduate MEng Computer Science student currently on an industry placement.
 
 Beyond the data engineering experience I've acquired through my placement, I'm passionate about building complete applications from the ground up. Through both personal and university projects, I have come to learn the art of compartmentalization and encapsulation;
@@ -59,10 +55,7 @@ bringing together technical depth, design thinking, and a genuine curiosity for 
         <div className="about-card-wrapper">
           <ProfileCard
             name="Widad Alli"
-            title="Software Engineer"
-            handle="WIDALI"
-            status="Available for opportunities"
-            contactText="LinkedIn"
+            title="MEng Comp Sci Student"
             avatarUrl="/portfolio/blank-profile-picture.png"
             iconUrl="/portfolio/code-pattern.svg"
             grainUrl="/portfolio/grain-noise.svg"
@@ -71,7 +64,6 @@ bringing together technical depth, design thinking, and a genuine curiosity for 
             behindGlowColor="rgba(125, 190, 255, 0.67)"
             behindGlowSize="50%"
             innerGradient="linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)"
-            onContactClick={handleContactClick}
             aboutText={aboutText}
           />
         </div>

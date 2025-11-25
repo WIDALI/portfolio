@@ -16,7 +16,7 @@ const round = (v, precision = 3) => parseFloat(v.toFixed(precision));
 const adjust = (v, fMin, fMax, tMin, tMax) => round(tMin + ((tMax - tMin) * (v - fMin)) / (fMax - fMin));
 
 const ProfileCardComponent = ({
-  avatarUrl = '/Toadette.png',
+  avatarUrl = '/portfolio/blank-profile-picture.png',
   iconUrl,
   grainUrl,
   innerGradient,
@@ -25,12 +25,12 @@ const ProfileCardComponent = ({
   behindGlowSize,
   className = '',
   enableTilt = true,
-  name = 'Widad Alli',
-  title = 'Software Engineer',
-  handle = 'widadalli',
-  status = 'Available for opportunities',
-  contactText = 'Contact Me',
-  showUserInfo = true,
+  name = '',
+  title = '',
+  handle = '',
+  status = '',
+  contactText = '',
+  showUserInfo = false,
   onContactClick,
   aboutText = ''
 }) => {
@@ -274,12 +274,6 @@ const ProfileCardComponent = ({
                   </div>
                 </div>
               )}
-            </div>
-            <div className="pc-content">
-              <div className="pc-details">
-                <h3>{name}</h3>
-                <p>{title}</p>
-              </div>
             </div>
           </div>
         </section>
