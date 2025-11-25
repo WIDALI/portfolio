@@ -393,5 +393,70 @@ body {
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
   }
+
+  .industry-card {
+    padding: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .industry-card h4 {
+    font-size: 1.15rem;
+  }
+
+  .industry-card p {
+    font-size: 0.9rem;
+  }
+
+  .card-icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .industry-section {
+    padding: 4rem 1rem;
+  }
+
+  .industry-card {
+    padding: 1.25rem;
+  }
+
+  .industry-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .industry-card p {
+    font-size: 0.85rem;
+  }
+
+  .card-icon {
+    font-size: 1.75rem;
+  }
+
+  .role-header h3 {
+    font-size: 1.25rem;
+  }
+
+  .role-duration {
+    font-size: 0.85rem;
+  }
+
+  .role-description {
+    font-size: 0.9rem;
+  }
+
+  .stack-tag {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
 }
 
