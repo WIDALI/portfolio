@@ -54,12 +54,14 @@ const Navigation = () => {
     }
   };
 
-  const toggleMobileProjects = () => {
-    setMobileProjectsOpen(!mobileProjectsOpen);
+  const toggleMobileProjects = (e) => {
+    if (e) e.stopPropagation();
+    setMobileProjectsOpen(prev => !prev);
   };
 
-  const toggleMobileContact = () => {
-    setMobileContactOpen(!mobileContactOpen);
+  const toggleMobileContact = (e) => {
+    if (e) e.stopPropagation();
+    setMobileContactOpen(prev => !prev);
   };
 
   return (
@@ -93,8 +95,7 @@ const Navigation = () => {
               className="dropdown-trigger"
               onClick={(e) => {
                 if (window.innerWidth <= 768) {
-                  e.stopPropagation();
-                  toggleMobileProjects();
+                  toggleMobileProjects(e);
                 } else {
                   scrollToSection('projects');
                 }
@@ -124,8 +125,7 @@ const Navigation = () => {
               className="dropdown-trigger"
               onClick={(e) => {
                 if (window.innerWidth <= 768) {
-                  e.stopPropagation();
-                  toggleMobileContact();
+                  toggleMobileContact(e);
                 } else {
                   scrollToSection('contact');
                 }
