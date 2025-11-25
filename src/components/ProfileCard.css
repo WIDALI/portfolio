@@ -54,12 +54,11 @@
   transition: opacity 0.3s ease;
 }
 
-/* Hide behind glow on hover when flipping */
-.pc-card-wrapper:hover .pc-behind {
+/* Hide behind glow when flipped */
+.pc-card-wrapper.flipped .pc-behind {
   opacity: 0;
 }
 
-.pc-card-wrapper:hover,
 .pc-card-wrapper.active {
   --card-opacity: 1;
 }
@@ -105,20 +104,9 @@
   pointer-events: all;
 }
 
-.pc-card-wrapper:hover .pc-card-shell,
+/* Flip only on click/tap - no hover */
 .pc-card-wrapper.flipped .pc-card-shell {
   transform: rotateY(180deg) !important;
-}
-
-/* On mobile, only use click, not hover */
-@media (max-width: 768px) {
-  .pc-card-wrapper:hover .pc-card-shell {
-    transform: rotateY(0deg);
-  }
-  
-  .pc-card-wrapper.flipped .pc-card-shell {
-    transform: rotateY(180deg) !important;
-  }
 }
 
 .pc-card-front,
